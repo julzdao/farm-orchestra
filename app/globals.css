@@ -123,3 +123,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+.font-space-mono {
+  font-family: var(--font-space-mono);
+}
+
+.font-dm-sans {
+  font-family: var(--font-noto-sans-jp); 
+}
+
