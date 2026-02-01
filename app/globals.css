@@ -132,3 +132,8 @@
   font-family: var(--font-noto-sans-jp); 
 }
 
+.dashboard-title {
+  @apply text-2xl mx-7 my-3;
+  font-family: var(--font-space-mono);
+}
+
