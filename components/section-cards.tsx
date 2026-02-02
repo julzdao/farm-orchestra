@@ -1,4 +1,4 @@
-import { IconTrendingDown, IconTrendingUp } from "@tabler/icons-react"
+import { IconCircle, IconTrendingDown, IconTrendingUp } from "@tabler/icons-react"
 
 import { Badge } from "@/components/ui/badge"
 import {
@@ -8,67 +8,17 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
+  SensorValueType,
 } from "@/components/ui/card"
+import { Circle, CircleSmall, Squircle } from "lucide-react"
+import { SensorReadingCard } from "./sensor-reading-card"
 
 export function SectionCards() {
   return (
     <div className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
-      <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>Temperature</CardDescription>
-          <CardTitle className="text-5xl font-space-mono tabular-nums @[250px]/card:text-5xl">
-            25°C
-          </CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <IconTrendingUp />
-              +12.5%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-      </Card>
-          <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>Moisture</CardDescription>
-          <CardTitle className="text-5xl font-space-mono tabular-nums @[250px]/card:text-5xl">
-            25°C
-          </CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <IconTrendingUp />
-              +12.5%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-      </Card>
-          <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>Air Humidity</CardDescription>
-          <CardTitle className="text-5xl font-space-mono tabular-nums @[250px]/card:text-5xl">
-            25°C
-          </CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <IconTrendingUp />
-              +12.5%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-      </Card>
-          <Card className="@container/card">
-        <CardHeader>
-          <CardDescription>Light Sensor</CardDescription>
-          <CardTitle className="text-5xl font-space-mono tabular-nums @[250px]/card:text-5xl">
-            25°C
-          </CardTitle>
-          <CardAction>
-            <Badge variant="outline">
-              <IconTrendingUp />
-              +12.5%
-            </Badge>
-          </CardAction>
-        </CardHeader>
-      </Card>
+      <SensorReadingCard title={"Temperature"} value={"22"} unit={"°C"} isActive={true} />
+      <SensorReadingCard title={"Air Humidity"} value={"33"} unit={"%"} isActive={true} />
+      <SensorReadingCard title={"Soil Moisture"} value={"12"} unit={"%"} isActive={false} />
     </div>
   )
 }

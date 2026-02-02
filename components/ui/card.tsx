@@ -5,9 +5,8 @@ import { cn } from "@/lib/utils"
 function Card({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      data-slot="card"
       className={cn(
-        "bg-card text-card-foreground flex flex-col gap-8 rounded-none border py-5 shadow-sm",
+        "flex flex-col gap-8 rounded-none py-3",
         className
       )}
       {...props}
@@ -18,9 +17,8 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
 function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      data-slot="card-header"
       className={cn(
-        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-10 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
+        "grid auto-rows-min grid-rows-[auto_auto] items-start gap-3 px-3 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
         className
       )}
       {...props}
@@ -31,8 +29,16 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
 function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      data-slot="card-title"
-      className={cn("leading-none font-semibold", className)}
+      className={cn("bg-neutral-100 leading-none px-4 py-2 pt-15 text-8xl flex content-end items-end font-space-mono tabular-nums @[250px]/card:text-8xl", className)}
+      {...props}
+    />
+  )
+}
+
+function SensorValueType({ className, ...props }: React.ComponentProps<"div">) {
+  return (
+    <h4
+      className={cn("text-neutral-400 text-2xl font-light", className)}
       {...props}
     />
   )
@@ -41,8 +47,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
 function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      data-slot="card-description"
-      className={cn("text-muted-foreground text-sm font-space-mono", className)}
+      className={cn("bg-neutral-100 text-sm font-space-mono px-5 py-3 flex justify-between", className)}
       {...props}
     />
   )
@@ -51,7 +56,6 @@ function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
 function CardAction({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      data-slot="card-action"
       className={cn(
         "col-start-2 row-span-2 row-start-1 self-start justify-self-end",
         className
@@ -64,7 +68,6 @@ function CardAction({ className, ...props }: React.ComponentProps<"div">) {
 function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      data-slot="card-content"
       className={cn("px-6", className)}
       {...props}
     />
@@ -89,4 +92,5 @@ export {
   CardAction,
   CardDescription,
   CardContent,
+  SensorValueType
 }
